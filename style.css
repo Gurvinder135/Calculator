@@ -1,0 +1,93 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.text{
+    display: block;
+    width: 13vw;
+    margin: 2.5vw auto 1vw;
+    font-size: 3vw;
+    border: 1px solid #c9c8c8;
+    border-radius: 0.5vw;
+    padding: 0.5vw 1vw;
+    background-color: rgb(197, 209, 209);
+}
+.main{
+    border:2px solid #c9c8c8;
+    border-radius: 0.5vw;
+    height:25.5vw;
+    padding: 0.5vw;
+    width: 30vw;
+    margin: 2vw auto;
+    background-color: rgba(114, 112, 112, 0.26);
+}
+.container{
+    display: grid;
+    grid-template-areas: 
+    "display display display display"
+    "a7 a8 a9 adiv"
+    "a4 a5 a6 amul"
+    "a1 a2 a3 aminus"
+    "a0 clear aequal aplus";
+    
+    
+    width: 30vw;
+    height: 23vw;
+    gap: 1vw;
+}
+#a1{grid-area: a1;}
+
+#a2{grid-area: a2; }
+
+#a3{grid-area: a3;}
+
+#a4{grid-area: a4;}
+
+#a5{grid-area: a5;}
+
+#a6{grid-area: a6;}
+
+#a7{grid-area: a7;}
+
+#a8{grid-area: a8;}
+
+#a9{grid-area: a9;}
+
+#a0{grid-area: a0;}
+
+#amul{grid-area: amul;}
+
+#adiv{grid-area: adiv;}
+
+#aminus{grid-area: aminus;}
+
+#plus{grid-area: aplus;}
+
+#clear{grid-area: clear;}
+
+#equal{grid-area: aequal;}
+
+.display{grid-area: display;
+text-align: right;
+border: 2px solid black;
+border-radius: 0.5vw;
+width: 29vw;
+line-height: 4vw;
+padding: 0.5vw;
+font-size: 1.4vw;}
+
+.button{
+    border: 2px solid black;
+    border-radius: 0.5vw;
+    width: 6.25vw;
+    text-align: center;
+   line-height: 3.5vw;
+   font-size: 1.3vw;
+   background-color: black;
+   color: white;
+    transition: all 0.15s ease-out;
+}
+.button:hover{
+    background-color: gray;
+    color: white;
+    transform: scale(1.01);
+}
