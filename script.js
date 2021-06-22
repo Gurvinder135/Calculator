@@ -58,7 +58,6 @@ let operatorFunc= function(key){
 
 function plus(second, first){
     result=first+second;
-    console.log(result);
     if(result){
     displayMain.textContent=result;}
     else{
@@ -78,8 +77,11 @@ function minus(second,first){
 function divide( second,first){
     result=first/second;
     if(result){
-        displayMain.textContent=result;}
-        else{
+        if(Number.isInteger(result)){
+            displayMain.textContent=result 
+        }else{
+        displayMain.textContent=result.toFixed(2);}}
+    else{
             displayMain.textContent=0; 
         } 
     clear1(); 

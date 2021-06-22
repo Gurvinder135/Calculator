@@ -1,6 +1,10 @@
 *{
     font-family: 'Roboto', sans-serif;
-   
+   margin: 0;
+   padding: 0px;
+}
+.bg{
+    background-color: azure;
 }
 .text{
     display: block;
@@ -10,7 +14,7 @@
     border: 1px solid #c9c8c8;
     border-radius: 0.5vw;
     padding: 0.5vw 1vw;
-    background-image:linear-gradient(to right,#99b8f1,#a7bfe8)
+    background-image:linear-gradient(to right,#c1d6fd,#a7bfe8)
 }
 .main{
     border:2px solid #c9c8c8;
@@ -19,7 +23,7 @@
     padding: 0.5vw;
     width: 30vw;
     margin: 2vw auto;
-    background-color: rgba(114, 112, 112, 0.26);
+    background-color: black;
 }
 .container{
     display: grid;
@@ -64,10 +68,10 @@
 #plus{grid-area: aplus;}
 
 #clear{grid-area: clear;
-    background-color: #df2685;}
+    background-color: #FF8F1F;}
 
 #aequal{grid-area: aequal;
-background-color: teal;}
+background-color: #FF8F1F;}
 
 .display{grid-area: display;
 text-align: right;
@@ -76,7 +80,7 @@ border-radius: 0.5vw;
 width: 29vw;
 line-height: 4vw;
 padding: 0.5vw;
-
+background-color: white;
 font-size: 1.4vw;}
 
 .button{
@@ -86,7 +90,7 @@ font-size: 1.4vw;}
     text-align: center;
    line-height: 3.5vw;
    font-size: 1.3vw;
-   background-color: black;
+   background-color: #217C7E;
    color: white;
   
     transition: all 0.15s ease-out;
@@ -96,6 +100,11 @@ font-size: 1.4vw;}
     color: white;
     transform: scale(1.01);
 }
+
+.operator{
+    background-color: dodgerblue;
+}
+
 @media screen and (max-width: 800px) {
     .text{
         
