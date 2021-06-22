@@ -1,5 +1,6 @@
 *{
     font-family: 'Roboto', sans-serif;
+   
 }
 .text{
     display: block;
@@ -9,7 +10,7 @@
     border: 1px solid #c9c8c8;
     border-radius: 0.5vw;
     padding: 0.5vw 1vw;
-    background-color: rgb(197, 209, 209);
+    background-image:linear-gradient(to right,#99b8f1,#a7bfe8)
 }
 .main{
     border:2px solid #c9c8c8;
@@ -62,9 +63,11 @@
 
 #plus{grid-area: aplus;}
 
-#clear{grid-area: clear;}
+#clear{grid-area: clear;
+    background-color: #df2685;}
 
-#equal{grid-area: aequal;}
+#aequal{grid-area: aequal;
+background-color: teal;}
 
 .display{grid-area: display;
 text-align: right;
@@ -73,10 +76,11 @@ border-radius: 0.5vw;
 width: 29vw;
 line-height: 4vw;
 padding: 0.5vw;
+
 font-size: 1.4vw;}
 
 .button{
-    border: 2px solid black;
+    border: 2px solid rgb(148, 143, 143);
     border-radius: 0.5vw;
     width: 6.25vw;
     text-align: center;
@@ -84,10 +88,55 @@ font-size: 1.4vw;}
    font-size: 1.3vw;
    background-color: black;
    color: white;
+  
     transition: all 0.15s ease-out;
 }
-.button:hover{
+.button:hover,#aequal:hover,#clear:hover{
     background-color: gray;
     color: white;
     transform: scale(1.01);
+}
+@media screen and (max-width: 800px) {
+    .text{
+        
+        width: 26vw;
+        margin: 5vw auto 2vw;
+        font-size: 6vw;
+       
+        border-radius: 1vw;
+        padding: 1vw 2vw;
+        
+    }
+    .main{
+        
+        border-radius: 1vw;
+        height:51vw;
+        padding: 1vw;
+        width: 60vw;
+        margin: 4vw auto;
+        
+    }
+    .container{
+       
+        width: 60vw;
+        height: 46vw;
+        gap: 2vw;
+    }
+    
+    .display{
+    border-radius: 1vw;
+    width: 58vw;
+    line-height: 8vw;
+    padding: 1vw;
+    
+    font-size: 2.8vw;}
+    
+    .button{
+        border-radius: 1vw;
+        width: 12.5vw;
+        
+       line-height: 7vw;
+       font-size: 2.6vw;
+       
+    }
 }

@@ -1,119 +1,102 @@
-let k1=document.querySelector("#a1");
-let k2=document.querySelector("#a2");
-let k3=document.querySelector("#a3");
-let k4=document.querySelector("#a4");
-let k5=document.querySelector("#a5");
-let k6=document.querySelector("#a6");
-let k7=document.querySelector("#a7");
-let k8=document.querySelector("#a8");
-let k9=document.querySelector("#a9");
-let k0=document.querySelector("#a0");
-let kplus=document.querySelector("#aplus");
-let kminus=document.querySelector("#aminus");
-let kdiv=document.querySelector("#adiv");
-let kmul=document.querySelector("#amul");
-let kequal=document.querySelector("#aequal");
-let kclear=document.querySelector("#clear");
-let display=document.querySelector(".display");
-let number="";
+let button=document.querySelectorAll(".button");
+let displayMain=document.querySelector(".display");
 let first_num="";
-let sec_num="";
 let operator="";
+let sec_num="";
 let result=0;
 
-k1.addEventListener("click", function(){
+console.log(button);
+button.forEach(function(eachButton){
+    eachButton.addEventListener("click",function(){
+        display(eachButton.textContent);
+    })
+})
+let key=window.addEventListener("keydown",function(e){
+   console.log(e.key);
+    display(e.key);
+})
+
+let display= function(key){
+    if(key==="1"||key==="2"||key==="3"||key==="4"||key==="5"||key==="6"||key==="7"||key==="8"||key==="9"||key==="0"){
+        numFunc(key);
+    } else if(key==="Clear"){
+        displayMain.textContent=0;
+        clear1();
+    } else if (key==="+"||key==="/"||key==="*"||key==="-"){
+        operatorFunc(key);
+    } else if(key==="="){
+        equal();
+    }  
+}
+
+let numFunc= function(num){
+    first_num=first_num+num;
+ displayMain.textContent=first_num;
+}
+
+let clear1=function(){
+    first_num="";
+    operator="";
     
-    display.textContent=`${number_func(1)}`;
-})
-k2.addEventListener("click", function(){
-    display.textContent=`${number_func(2)}`;
-})
-k3.addEventListener("click", function(){
-    display.textContent=`${number_func(3)}`;
-})
-k4.addEventListener("click", function(){
-    display.textContent=`${number_func(4)}`;
-})
-k5.addEventListener("click", function(){
-    display.textContent=`${number_func(5)}`;
-})
-k6.addEventListener("click", function(){
-    display.textContent=`${number_func(6)}`;
-})
-k7.addEventListener("click", function(){
-    display.textContent=`${number_func(7)}`;
-})
-k8.addEventListener("click", function(){
-    display.textContent=`${number_func(8)}`;
-})
-k9.addEventListener("click", function(){
-    display.textContent=`${number_func(9)}`;
-})
-k0.addEventListener("click", function(){
-    display.textContent=`${number_func(0)}`;
-})
-kclear.addEventListener("click",function(){
-    clear_scr();
-})
-kmul.addEventListener("click", function(){
-    display.textContent=`${number}*`;
-    first_num=parseInt(number);
-    operator="*";
-    number='';
-})
-kdiv.addEventListener("click", function(){
-    display.textContent=`${number}/`;
-    first_num=parseInt(number);
-    operator="/";
-    number='';
-})
-kminus.addEventListener("click", function(){
-    display.textContent=`${number}-`;
-    first_num=parseInt(number);
-    operator="-";
-    number='';})
-kplus.addEventListener("click",function(){
-    display.textContent=`${number}+`;
-    first_num=parseInt(number);
-    operator="+";
-    number='';
-})
-kequal.addEventListener("click",function(){
-    equal();
-})
+        sec_num="";
+        // result="";
+        
+}
+
+let operatorFunc= function(key){
+    if(operator){
+        equal();
+        first_num=result;
+    }
+    displayMain.textContent=first_num+key
+    operator=key;
+    sec_num=first_num;
+    first_num="";
+    result="";
+}
 
 
-function number_func(a){
-    number=`${number}${a}`
-    return number;
-}
-function clear_scr(){
-    display.textContent="0"
-    number="";
-}
-function plus(first, second){
+function plus(second, first){
     result=first+second;
-    display.textContent=result; 
-    clearnum();
+    console.log(result);
+    if(result){
+    displayMain.textContent=result;}
+    else{
+        displayMain.textContent=0; 
+    } 
+    clear1();
 }
-function minus(first, second){
+function minus(second,first){
     result=first-second;
-    display.textContent=result;
-    clearnum(); 
+    if(result){
+        displayMain.textContent=result;}
+        else{
+            displayMain.textContent=0; 
+        } 
+    clear1(); 
 }
-function divide(first, second){
+function divide( second,first){
     result=first/second;
-    display.textContent=result;
-    clearnum(); 
+    if(result){
+        displayMain.textContent=result;}
+        else{
+            displayMain.textContent=0; 
+        } 
+    clear1(); 
 }
-function multiply(first, second){
+function multiply(second,first){
     result=first*second;
-    display.textContent=result; 
-    clearnum();
+    if(result){
+        displayMain.textContent=result;}
+        else{
+            displayMain.textContent=0; 
+        } 
+    clear1();
 }
 
 function equal(){
-    sec_num=parseInt(number);
+    sec_num=parseInt(sec_num);
+    first_num=parseInt(first_num);
 if(operator==="+"){
     plus(first_num,sec_num);
 } else if(operator==="-"){
@@ -123,10 +106,4 @@ if(operator==="+"){
 }else {
     multiply(first_num,sec_num);
 }
-}
-function clearnum(){
-    first_num="";
-    sec_num="";
-    result="";
-    number="";
 }
