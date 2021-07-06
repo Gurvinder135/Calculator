@@ -1,7 +1,9 @@
 
 # Calculator
 
-This is basic calculator with plus,minus, multiply and divide operators. This project is created from HTML, CSS and JavaScript.
+This is basic calculator with plus,minus, multiply and divide operators. 
+This project taught me how to add basic mathematic functions to a website.
+This project is created from HTML, CSS and JavaScript.
 
 
 ## Launch
